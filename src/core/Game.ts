@@ -37,6 +37,4 @@ export default class Game {
     this.hideAllScreens();
     this.gameOverScreen.show();
   }
-
-  update(delta: number) { }
 }
