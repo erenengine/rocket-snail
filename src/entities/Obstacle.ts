@@ -1,4 +1,4 @@
-import { GameObject } from '@erenengine/2d';
+import { PhysicsObject } from '@erenengine/2d';
 
-export default class Obstacle extends GameObject {
+export default class Obstacle extends PhysicsObject {
 }

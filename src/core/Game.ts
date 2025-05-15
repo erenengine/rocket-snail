@@ -1,18 +1,22 @@
-import { GameObject } from '@erenengine/2d';
-import GameOverScreen from 'src/ui/GameOverScreen';
-import HUD from 'src/ui/HUD';
-import StartScreen from 'src/ui/StartScreen';
+import { GameObject, PhysicsWorld } from '@erenengine/2d';
+import GameOverScreen from '../ui/GameOverScreen';
+import HUD from '../ui/HUD';
+import StartScreen from '../ui/StartScreen';
 
 export default class Game {
   private startScreen: StartScreen;
   private gameOverScreen: GameOverScreen;
   private hud: HUD;
 
+  private world: PhysicsWorld;
+
   constructor(private stage: GameObject) {
     this.startScreen = new StartScreen().addTo(this.stage);
     this.gameOverScreen = new GameOverScreen().addTo(this.stage);
     this.hud = new HUD().addTo(this.stage);
     this.hideAllScreens();
+
+    this.world = new PhysicsWorld(0, 0).addTo(this.stage);
   }
 
   private hideAllScreens() {
