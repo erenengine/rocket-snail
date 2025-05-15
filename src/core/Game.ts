@@ -1,14 +1,38 @@
-import { AssetLoader, GameObject, Renderer } from '@erenengine/2d';
-import LoadingScreen from 'src/ui/LoadingScreen';
+import { GameObject } from '@erenengine/2d';
+import GameOverScreen from 'src/ui/GameOverScreen';
+import HUD from 'src/ui/HUD';
+import StartScreen from 'src/ui/StartScreen';
 
 export default class Game {
-  constructor(private stage: GameObject) { }
+  private startScreen: StartScreen;
+  private gameOverScreen: GameOverScreen;
+  private hud: HUD;
 
-  start() { }
+  constructor(private stage: GameObject) {
+    this.startScreen = new StartScreen().addTo(this.stage);
+    this.gameOverScreen = new GameOverScreen().addTo(this.stage);
+    this.hud = new HUD().addTo(this.stage);
+    this.hideAllScreens();
+  }
 
-  startGame() { }
+  private hideAllScreens() {
+    [this.startScreen, this.gameOverScreen, this.hud].forEach(screen => screen.hide());
+  }
 
-  endGame() { }
+  start() {
+    this.hideAllScreens();
+    this.startScreen.show();
+  }
+
+  startGame() {
+    this.hideAllScreens();
+    this.hud.show();
+  }
+
+  endGame() {
+    this.hideAllScreens();
+    this.gameOverScreen.show();
+  }
 
   update(delta: number) { }
 }
