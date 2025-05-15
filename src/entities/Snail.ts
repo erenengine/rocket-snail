@@ -1,4 +1,4 @@
-import { GameNode } from "erenengine";
+import { GameObject } from "@erenengine/2d";
 
-export default class Snail extends GameNode {
+export default class Snail extends GameObject {
 }

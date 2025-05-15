@@ -1,4 +1,4 @@
-import { GameNode } from "erenengine";
+import { GameObject } from "@erenengine/2d";
 
-export default class StartScreen extends GameNode {
+export default class StartScreen extends GameObject {
 }
