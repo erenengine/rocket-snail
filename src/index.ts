@@ -1,8 +1,8 @@
 import { AssetLoader, Renderer } from '@erenengine/2d';
-import Game from "./core/Game";
-import LoadingScreen from './ui/LoadingScreen';
+import Game from "./core/Game.js";
+import LoadingScreen from './ui/LoadingScreen.js';
 
-const renderer = new Renderer();
+const renderer = new Renderer('720x1280');
 const loadingScreen = new LoadingScreen().addTo(renderer.stage);
 
 await AssetLoader.load([

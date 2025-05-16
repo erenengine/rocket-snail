@@ -1,7 +1,7 @@
 import { GameObject, PhysicsWorld } from '@erenengine/2d';
-import GameOverScreen from '../ui/GameOverScreen';
-import HUD from '../ui/HUD';
-import StartScreen from '../ui/StartScreen';
+import GameOverScreen from '../ui/GameOverScreen.js';
+import HUD from '../ui/HUD.js';
+import StartScreen from '../ui/StartScreen.js';
 
 export default class Game {
   private startScreen: StartScreen;
