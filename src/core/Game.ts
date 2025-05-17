@@ -11,9 +11,9 @@ export default class Game {
   private world: PhysicsWorld;
 
   constructor(private stage: GameObject) {
-    this.startScreen = new StartScreen().addTo(this.stage);
-    this.gameOverScreen = new GameOverScreen().addTo(this.stage);
-    this.hud = new HUD().addTo(this.stage);
+    this.startScreen = new StartScreen().addTo(stage);
+    this.gameOverScreen = new GameOverScreen().addTo(stage);
+    this.hud = new HUD().addTo(stage);
     this.hideAllScreens();
 
     this.world = new PhysicsWorld(0, 0).addTo(this.stage);

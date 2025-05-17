@@ -6,6 +6,5 @@ export default class LoadingScreen extends GameObject {
   }
 
   setProgress(progress: number) {
-    throw new Error('Not implemented');
   }
 }
