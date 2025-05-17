@@ -1,7 +1,8 @@
-import { GameObject, PhysicsWorld } from '@erenengine/2d';
+import { GameObject, PhysicsWorld, Sprite } from '@erenengine/2d';
 import GameOverScreen from '../ui/GameOverScreen.js';
 import HUD from '../ui/HUD.js';
 import StartScreen from '../ui/StartScreen.js';
+import Snail from '../entities/Snail.js';
 
 export default class Game {
   private startScreen: StartScreen;
@@ -9,6 +10,7 @@ export default class Game {
   private hud: HUD;
 
   private world: PhysicsWorld;
+  private snail: Snail;
 
   constructor(private stage: GameObject) {
     this.startScreen = new StartScreen().addTo(stage);
@@ -16,7 +18,9 @@ export default class Game {
     this.hud = new HUD().addTo(stage);
     this.hideAllScreens();
 
+    new Sprite(0, 0, 'background').addTo(this.stage);
     this.world = new PhysicsWorld(0, 0).addTo(this.stage);
+    this.snail = new Snail(0, 0).addTo(this.world);
   }
 
   private hideAllScreens() {
