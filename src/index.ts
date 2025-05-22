@@ -1,5 +1,5 @@
 import { AssetLoader, GameSettings, Renderer } from '@erenengine/2d';
-import Game from "./core/Game.js";
+import Game from './core/Game.js';
 import LoadingScreen from './ui/LoadingScreen.js';
 
 GameSettings.debug = true;
