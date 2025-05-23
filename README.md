@@ -1,1 +1,1 @@
-[`web`](rs/web)
+[`web`](ts/web/)
